@@ -1,0 +1,76 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Web Shop JS</title>
+        <link rel="stylesheet" href="./style.css">
+        <!-- bootstrap-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+        <!-- fontovi -->
+        <link rel="stylesheet" href="https://use:fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+
+
+    <header class="flex-column flex-md-row  p-3 px-md-4 mb-3  alert-primary">
+        <p id="clear" style="cursor: pointer; width: 20%;" class="h2 my-0 me-md-auto fw-normal">Web Šopina</p>
+        <a href="./cart.html"><i id="cart" style="float:right; font-size: 3rem; position: absolute; top: 1%; right: 2%; color: red;" class="fa fa-shopping-cart"></i></a>
+    </header>
+
+    <main class="container">
+        <button id="addNewItemBtn" class="btn btn-lg btn-danger" style="float: right;">Add New Item</button>
+
+        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+            <h1 class="display-1" style="font-weight: 400;">Naši proizvodi</h1>
+            <p class="lead mt-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora laboriosam placeat sapiente pariatur quidem expedita sed nostrum. In, possimus maxime!</p>
+        </div>
+
+        <div id="parentRow" class="row row-cols-1 row-cols-md-3 mb-3 text-center"></div>
+
+    </main>
+
+    <footer class="border-top alert-primary">
+        <div class="row">
+            <div class="col-12 col-md">
+
+            <small class="d-block mb-3 text-muted">&copy; 2017–2021</small>
+            </div>
+            <div class="col-6 col-md">
+            <h5>Features</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="link-secondary" href="#">Cool stuff</a></li>
+                <li><a class="link-secondary" href="#">Random feature</a></li>
+                <li><a class="link-secondary" href="#">Team feature</a></li>
+                <li><a class="link-secondary" href="#">Stuff for developers</a></li>
+                <li><a class="link-secondary" href="#">Another one</a></li>
+                <li><a class="link-secondary" href="#">Last time</a></li>
+            </ul>
+            </div>
+            <div class="col-6 col-md">
+            <h5>Resources</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="link-secondary" href="#">Resource</a></li>
+                <li><a class="link-secondary" href="#">Resource name</a></li>
+                <li><a class="link-secondary" href="#">Another resource</a></li>
+                <li><a class="link-secondary" href="#">Final resource</a></li>
+            </ul>
+            </div>
+            <div class="col-6 col-md">
+            <h5>About</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="link-secondary" href="#">Team</a></li>
+                <li><a class="link-secondary" href="#">Locations</a></li>
+                <li><a class="link-secondary" href="#">Privacy</a></li>
+                <li><a class="link-secondary" href="#">Terms</a></li>
+            </ul>
+            </div>
+        </div>
+        </footer>
+
+
+    <script type="module" src="./src/main.js"></script>
+    </body>
+    </html>

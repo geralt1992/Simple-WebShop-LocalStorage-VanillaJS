@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <!-- bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styleCart.css">
+</head>
+<body>
+
+
+    <div class="container">
+        <button class="btn btn-danger btn-sm mb-5"><a href="./index.html" class="btn btn-danger"><i class="fa fa-angle-left"></i> Continue Shopping</a></button>
+        <table id="cart" class="table table-hover table-condensed">
+                        <thead>
+                            <tr>
+                                <th style="width:50%">Product</th>
+                                <th style="width:10%">Price</th>
+                                <th style="width:8%">Quantity</th>
+                                <th style="width:17%" class="text-center">Subtotal</th>
+                                <th style="width:15%">Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableOut"></tbody>
+                        <tfoot>
+                            <tr class="visible-xs">
+                                <td id="total2" class="text-center"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" class="hidden-xs"></td>
+                                <td id="total" class="hidden-xs text-center"></td>
+                                <td><a href="#" id="paypal-button-container" class="mt-3 btn btn-success btn-block">Checkout<i class="fa fa-angle-right"></i></a></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+    </div>
+    <div ></div>
+</body>
+
+<script src="./src/cart.js"></script>
+
+<!-- PAYPAL PAYMENT INTER-->
+    <script
+        src="https://www.paypal.com/sdk/js?client-id=AaY5KH2AQU6UC8dHhcWwAmJ6bFcFwCA931YffLmUQDN2PjgieKODI1wx4QKe0Tb-biH1Bk2M7mUntl7i"> // Required. Replace YOUR_CLIENT_ID with your sandbox client ID.
+    </script>
+
+<!-- PAYPAL PAYMENT INTER-->
+    <script>
+    paypal.Buttons({
+        createOrder: function(data, actions) {
+            // This function sets up the details of the transaction, including the amount and line item details.
+            let price = +document.getElementById('total2').innerHTML;
+            return actions.order.create({
+            purchase_units: [{
+                amount: {
+                value: price
+                }
+            }]
+
+            });
+            console.log(amount.value)
+        },
+        onApprove: function(data, actions) {
+            // This function captures the funds from the transaction.
+            return actions.order.capture().then(function(details) {
+            // This function shows a transaction success message to your buyer.
+            alert('Transaction completed by ' + details.payer.name.given_name);
+            });
+        }
+        }).render('#paypal-button-container');
+        //This function displays Smart Payment Buttons on your web page.
+    </script>
+</html>

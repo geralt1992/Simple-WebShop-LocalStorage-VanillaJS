@@ -1,0 +1,30 @@
+x .pricing-header {
+    max-width: 700px;
+}
+
+body {
+    background-color: #f4f4f4f4 !important;
+}
+
+footer {
+    background-color: white;
+    padding: 2rem;
+}
+
+.container {
+    min-height: 90vh;
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
